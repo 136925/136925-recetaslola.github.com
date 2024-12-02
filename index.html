@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <title>Las Recetas de Lola</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Las Recetas de Lola</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav me-auto">
+                    <a class="nav-link active" href="#">Inicio</a>
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#nuevaRecetaModal">
+                        Nueva Receta
+                    </a>
+                </div>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar receta..." id="searchInput">
+                    <button class="btn btn-light" type="button" onclick="buscarReceta()">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="row" id="listaRecetas">
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="nuevaRecetaModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nueva Receta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="recetaForm" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label class="form-label">Número consecutivo</label>
+                            <input type="number" class="form-control" id="numero" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre de la receta</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripción</label>
+                            <textarea class="form-control" id="descripcion" rows="3" required></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Fotografía</label>
+                            <input type="file" class="form-control" id="foto" accept="image/*" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Costo de fabricación</label>
+                            <input type="number" class="form-control" id="costo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Precio sugerido de venta</label>
+                            <input type="number" class="form-control" id="precio" required>
+                        </div>
+                        <button type="button" class="btn btn-primary" onclick="guardarReceta()">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/eje.js"></script>
+</body>
+</html>
